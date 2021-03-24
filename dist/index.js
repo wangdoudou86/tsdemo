@@ -1,6 +1,17 @@
 "use strict";
-function greeter(person) {
-    return "Hello, " + person;
+var Genger;
+(function (Genger) {
+    Genger["Male"] = "man";
+    Genger["Female"] = "woman";
+})(Genger || (Genger = {}));
+function merry(a, b) {
+    if (a.gender !== b.gender) {
+        return [a, b];
+    }
+    else {
+        throw new Error('性别相同不能结婚');
+    }
 }
-var user = "Jane User";
-console.log(greeter(user));
+var a = { gender: Genger.Male };
+var b = { gender: Genger.Female };
+console.log(merry(a, b));
